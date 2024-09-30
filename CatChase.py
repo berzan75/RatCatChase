@@ -25,6 +25,29 @@ def draw():
         screen.draw.text("Time's up,you're final score is..."+str(score),
                          center=(200,250),
                          color="yellow")
+def rat_place():
+    rat.x=randint(45, 455)
+    rat.y=randint(45, 455)
+
+def update():
+    global score  
+    if keyboard.left:
+        cat.x=cat.x-2
+    if keyboard.right:
+        cat.x=cat.x+2
+    if keyboard.up:
+        cat.y=cat.y-2
+    if keyboard.down:
+        cat.y=cat.y+2
+
+    if cat.colliderect(rat):
+        rat_place()
+        score=score+10
+
+    
+    
+  
+
 
 
 pgzrun.go()
