@@ -21,7 +21,7 @@ def draw():
                      topleft=(10, 10),
                      color="yellow")
     if game_over :
-        screen.fiil("RED")
+        screen.fill("RED")
         screen.draw.text("Time's up,you're final score is..."+str(score),
                          center=(200,250),
                          color="yellow")
@@ -44,9 +44,11 @@ def update():
         rat_place()
         score=score+10
 
-    
-    
-  
+def time_up():
+    global game_over
+    game_over= True
+
+clock.schedule(time_up, 10.0)
 
 
 
